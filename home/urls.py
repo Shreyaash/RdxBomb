@@ -6,11 +6,13 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('about', views.about,name='about'),
     path('powerfulindex', views.powerfulindex,name='powerfulindex'),
+    path('callbombindex', views.callbombindex,name='callbombindex'),
     path('powerfulattack', views.powerfulattack,name='powerfulattack'),
     path('register', views.register,name='register'),
     path('help', views.help,name='help'),
     path('adduser', views.adduser,name='adduser'),
     path('useradded', views.useradded,name='useradded'),
+    path('docallattack/', views.docallattack,name="docallattack"),
     path('doattack/', views.doattack,name="doattack")
 
 ]

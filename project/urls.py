@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('powerfulindex',include('home.urls')),
+    path('callbombindex',include('home.urls')),
     path('powerfulattack',include('home.urls')),
     path('home',include('home.urls')),
     path('register',include('home.urls')),
