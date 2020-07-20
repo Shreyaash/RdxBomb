@@ -234,7 +234,7 @@ def docallattack(request):
     if int(numberofworker) == 0:
         numberofworker = ""
 
-    os.system(f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber{numberofworker}")
+    os.system(f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber{numberofworker}")
 
     datasend = {"texts" :f"ATTACK COMPLETE WITH  : MOBILE NUMBER :{mobile_no}  AND WITH {frequency_no} CALLS WITH SERVER  : RDXBOMBSERVER{numberofworker}"}
     print(datasend["texts"])
