@@ -131,7 +131,7 @@ def doattack(request):
     if int(numberofworker) == 0:
         numberofworker = ""
 
-    os.system(f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber{numberofworker}")
+    os.system(f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber{numberofworker}")
 
     datasend = {"texts" :f"ATTACK COMPLETE WITH  : MOBILE NUMBER :{mobile_no}  AND WITH {frequency_no} SMS WITH SERVER  : RDXBOMBSERVER{numberofworker}"}
     print(datasend["texts"])
@@ -168,7 +168,7 @@ def docallattack(request):
     # ------------------------ UPDATE DATABASE ---------------------
 
     def updatedatabase():
-        workers_list = ["worker0", "worker1", "worker2", "worker3"]
+        workers_list = ["worker0"]
         for i in workers_list:
             swor = Workerinfo.objects.get(workername=i)
             swor_ctime = swor.workerctime
@@ -192,15 +192,11 @@ def docallattack(request):
     updatedatabase()
 
 
-    worker0 = f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber"
-    worker1= f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber1"
-    worker2 = f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber2"
-    worker3 = f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber3"
-
+    worker0 = f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdx-bomber"
 
     awor = Workerinfo.objects.filter(status="free")
 
-    for_wrkr1 = Workerinfo.objects.get(workername="worker1")
+    for_wrkr1 = Workerinfo.objects.get(workername="worker0")
     ctime = for_wrkr1.workerctime
     rtime = for_wrkr1.workerrtime
     time_c_worker = datetime.datetime.strptime(ctime, '%Y-%m-%d %H:%M:%S.%f')
@@ -230,7 +226,7 @@ def docallattack(request):
     if int(numberofworker) == 0:
         numberofworker = ""
 
-    os.system(f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdxbomber{numberofworker}")
+    os.system(f"heroku run:detached python rdxcallbomber.py {mobile_no} {frequency_no}  --app rdx-bomber{numberofworker}")
 
     datasend = {"texts" :f"ATTACK COMPLETE WITH  : MOBILE NUMBER :{mobile_no}  AND WITH {frequency_no} CALLS WITH SERVER  : RDXBOMBSERVER{numberofworker}"}
     print(datasend["texts"])
