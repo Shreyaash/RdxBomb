@@ -97,10 +97,10 @@ def doattack(request):
     updatedatabase()
 
 
-    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber"
-    worker1= f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber1"
-    worker2 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber2"
-    worker3 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdxbomber3"
+    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
+    worker1= f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
+    worker2 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
+    worker3 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
 
 
     awor = Workerinfo.objects.filter(status="free")
