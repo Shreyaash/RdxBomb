@@ -101,7 +101,7 @@ def doattack(request):
 
     awor = Workerinfo.objects.filter(status="free")
 
-    for_wrkr1 = Workerinfo.objects.get(workername="worker1")
+    for_wrkr1 = Workerinfo.objects.get(workername="worker0")
     ctime = for_wrkr1.workerctime
     rtime = for_wrkr1.workerrtime
     time_c_worker = datetime.datetime.strptime(ctime, '%Y-%m-%d %H:%M:%S.%f')
