@@ -97,7 +97,7 @@ def doattack(request):
     updatedatabase()
 
 
-    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber
+    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
 
     awor = Workerinfo.objects.filter(status="free")
 
