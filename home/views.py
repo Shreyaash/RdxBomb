@@ -73,7 +73,7 @@ def doattack(request):
     # ------------------------ UPDATE DATABASE ---------------------
 
     def updatedatabase():
-        workers_list = ["worker0", "worker1", "worker2", "worker3"]
+        workers_list = ["worker0"]
         for i in workers_list:
             swor = Workerinfo.objects.get(workername=i)
             swor_ctime = swor.workerctime
@@ -97,11 +97,7 @@ def doattack(request):
     updatedatabase()
 
 
-    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
-    worker1= f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
-    worker2 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
-    worker3 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber"
-
+    worker0 = f"heroku run:detached python rdxbomb.py {mobile_no} {frequency_no}  --app rdx-bomber
 
     awor = Workerinfo.objects.filter(status="free")
 
